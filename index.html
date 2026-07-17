@@ -4,27 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Abdul Ahad — Unity Game Developer portfolio. WebGL, mobile hyper-casual games, and Unity editor tools.">
-  <meta name="theme-color" content="#0a0a0f">
+  <meta name="theme-color" content="#050508">
   <title>Abdul Ahad | Unity Game Developer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23e11d48'/%3E%3Cstop offset='50%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%2338bdf8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23050508'/%3E%3Crect x='2' y='2' width='60' height='60' rx='12' fill='none' stroke='url(%23g)' stroke-width='2.5'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Segoe UI,Arial,sans-serif' font-size='36' font-weight='800' fill='url(%23g)'%3EA%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23e11d48'/%3E%3Cstop offset='50%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%2338bdf8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23050508'/%3E%3Crect x='2' y='2' width='60' height='60' rx='12' fill='none' stroke='url(%23g)' stroke-width='2.5'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Segoe UI,Arial,sans-serif' font-size='36' font-weight='800' fill='url(%23g)'%3EA%3C/text%3E%3C/svg%3E">
   <style>
     /* ========== CSS VARIABLES ========== */
     :root {
-      --bg-primary: #0a0a0f;
-      --bg-secondary: #12121a;
-      --bg-tertiary: #1a1a26;
+      --bg-primary: #050508;
+      --bg-secondary: #0e0e14;
+      --bg-tertiary: #16161f;
       --text-primary: #f4f4f8;
       --text-secondary: #a8a8b8;
       --text-muted: #6b6b7b;
-      --accent-1: #6366f1;
-      --accent-2: #8b5cf6;
-      --accent-3: #06b6d4;
+      --accent-1: #e11d48;
+      --accent-2: #3b82f6;
+      --accent-3: #38bdf8;
       --accent-gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3));
       --glass-bg: rgba(255, 255, 255, 0.04);
       --glass-border: rgba(255, 255, 255, 0.08);
       --glass-blur: 16px;
-      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 20px;
@@ -35,7 +37,7 @@
       --nav-height: 72px;
       --section-padding: clamp(3rem, 8vw, 6rem);
       --container-max: 1200px;
-      --focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.5);
+      --focus-ring: 0 0 0 3px rgba(225, 29, 72, 0.45);
     }
 
     /* ========== RESET & BASE ========== */
@@ -46,12 +48,17 @@
       -webkit-text-size-adjust: 100%;
     }
     body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
       background: var(--bg-primary);
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: 1.65;
       overflow-x: hidden;
       min-height: 100vh;
+      letter-spacing: 0.01em;
+    }
+    ::selection {
+      background: rgba(225, 29, 72, 0.45);
+      color: #fff;
     }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
@@ -74,8 +81,8 @@
     .bg-gradient {
       position: absolute; inset: -50%;
       background: conic-gradient(from 0deg at 50% 50%,
-        rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1),
-        rgba(6, 182, 212, 0.12), rgba(99, 102, 241, 0.15));
+        rgba(225, 29, 72, 0.15), rgba(59, 130, 246, 0.1),
+        rgba(56, 189, 248, 0.12), rgba(225, 29, 72, 0.15));
       animation: rotateGradient 20s linear infinite;
       filter: blur(80px);
     }
@@ -124,17 +131,30 @@
     }
     .section-label {
       display: inline-block;
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--accent-3);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.65rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: var(--radius-full);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
     }
     .section-title {
       font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 700;
       letter-spacing: -0.02em;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 3px;
+      margin: 0.85rem auto 0;
+      border-radius: 2px;
+      background: var(--accent-gradient);
     }
     .reveal {
       opacity: 0;
@@ -163,7 +183,7 @@
       transition: background var(--transition-base), box-shadow var(--transition-base);
     }
     .navbar.scrolled {
-      background: rgba(10, 10, 15, 0.75);
+      background: rgba(5, 5, 8, 0.8);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--glass-border);
@@ -176,10 +196,19 @@
       padding-inline: clamp(1rem, 4vw, 2rem);
     }
     .nav-logo {
-      font-size: 1.25rem; font-weight: 700;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px;
+      font-size: 1.15rem; font-weight: 800;
+      border-radius: 10px;
       background: var(--accent-gradient);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+      box-shadow: 0 4px 16px rgba(225, 29, 72, 0.35);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .nav-logo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(225, 29, 72, 0.5);
     }
     .nav-links {
       display: none; gap: 0.25rem;
@@ -194,6 +223,10 @@
     .nav-link:hover, .nav-link.active {
       color: var(--text-primary);
       background: rgba(255, 255, 255, 0.06);
+    }
+    .nav-link.active {
+      background: rgba(225, 29, 72, 0.18);
+      color: #fff;
     }
     .nav-toggle {
       display: flex; flex-direction: column; justify-content: center;
@@ -216,7 +249,7 @@
     }
     .mobile-menu {
       position: fixed; top: var(--nav-height); left: 0; right: 0;
-      background: rgba(10, 10, 15, 0.95);
+      background: rgba(5, 5, 8, 0.96);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--glass-border);
@@ -270,7 +303,7 @@
       border: 3px solid transparent;
       background: linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
         var(--accent-gradient) border-box;
-      box-shadow: var(--shadow-lg), 0 0 60px rgba(99, 102, 241, 0.2);
+      box-shadow: var(--shadow-lg), 0 0 60px rgba(225, 29, 72, 0.2);
     }
     .hero-greeting {
       font-size: 1rem; color: var(--accent-3);
@@ -328,9 +361,9 @@
     .btn-primary {
       background: var(--accent-gradient);
       color: #fff;
-      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 4px 20px rgba(225, 29, 72, 0.4);
     }
-    .btn-primary:hover { box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5); }
+    .btn-primary:hover { box-shadow: 0 8px 30px rgba(225, 29, 72, 0.5); }
     .btn-secondary {
       background: transparent;
       border: 1px solid var(--glass-border);
@@ -351,7 +384,7 @@
     }
     .social-link:hover {
       color: var(--accent-3);
-      border-color: rgba(6, 182, 212, 0.4);
+      border-color: rgba(56, 189, 248, 0.4);
       transform: translateY(-3px);
     }
     .social-link svg { width: 20px; height: 20px; fill: currentColor; }
@@ -395,13 +428,13 @@
       padding: 0.4rem 1rem;
       font-size: 0.8rem; font-weight: 500;
       border-radius: var(--radius-full);
-      background: rgba(99, 102, 241, 0.15);
-      border: 1px solid rgba(99, 102, 241, 0.3);
+      background: rgba(225, 29, 72, 0.15);
+      border: 1px solid rgba(225, 29, 72, 0.3);
       color: var(--text-primary);
       animation: pillPulse 3s ease-in-out infinite;
     }
-    .skill-pill:nth-child(2n) { animation-delay: 0.5s; background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.3); }
-    .skill-pill:nth-child(3n) { animation-delay: 1s; background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.3); }
+    .skill-pill:nth-child(2n) { animation-delay: 0.5s; background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.3); }
+    .skill-pill:nth-child(3n) { animation-delay: 1s; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.3); }
     @keyframes pillPulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.03); }
@@ -436,7 +469,7 @@
       background: var(--accent-1);
       border: 3px solid var(--bg-primary);
       border-radius: 50%;
-      box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+      box-shadow: 0 0 12px rgba(225, 29, 72, 0.6);
     }
     .timeline-content {
       padding: 1.5rem;
@@ -479,54 +512,188 @@
     /* ========== PROJECTS ========== */
     .projects-grid {
       display: grid;
-      gap: clamp(1.5rem, 3vw, 2rem);
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 1rem;
+      grid-template-columns: 1fr;
     }
     .project-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: stretch;
       overflow: hidden;
-      transition: transform var(--transition-base), box-shadow var(--transition-base);
+      min-width: 0;
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
     }
     .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md), 0 0 0 1px rgba(225, 29, 72, 0.22);
+      border-color: rgba(225, 29, 72, 0.28);
     }
     .project-image {
-      aspect-ratio: 16/10;
-      background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(6,182,212,0.15));
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-      border-bottom: 1px solid var(--glass-border);
+      width: clamp(88px, 26vw, 112px);
+      min-height: 100%;
+      background:
+        radial-gradient(circle at 40% 30%, rgba(225,29,72,0.28), transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(56,182,248,0.18), transparent 55%),
+        rgba(18, 18, 26, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid var(--glass-border);
+      padding: 0.85rem;
+      flex-shrink: 0;
     }
     .project-image img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 88px;
+      aspect-ratio: 1;
+      object-fit: contain;
+      border-radius: 20%;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
       transition: transform var(--transition-base);
     }
     .project-card:hover .project-image img {
       transform: scale(1.05);
     }
-    .project-body { padding: 1.5rem; }
-    .project-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .project-desc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; }
+    .project-body {
+      display: flex;
+      flex-direction: column;
+      padding: 0.95rem 1rem 1rem;
+      min-width: 0;
+      gap: 0.45rem;
+    }
+    .project-title {
+      font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;
+      hyphens: auto;
+    }
+    .project-desc {
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin: 0;
+    }
     .project-tags {
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-      margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: auto;
+      padding-top: 0.25rem;
     }
     .project-tag {
-      font-size: 0.75rem; padding: 0.25rem 0.6rem;
-      background: rgba(255,255,255,0.06);
-      border-radius: var(--radius-sm);
+      font-size: 0.68rem;
+      padding: 0.22rem 0.55rem;
+      background: rgba(225, 29, 72, 0.12);
+      border: 1px solid rgba(225, 29, 72, 0.2);
+      border-radius: var(--radius-full);
       color: var(--text-secondary);
+      white-space: nowrap;
     }
     .project-link {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      font-weight: 600; font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-weight: 600;
+      font-size: 0.82rem;
       color: var(--accent-3);
-      transition: gap var(--transition-fast);
+      margin-top: 0.15rem;
+      width: fit-content;
+      min-height: 44px;
+      padding: 0.35rem 0;
+      transition: gap var(--transition-fast), color var(--transition-fast);
     }
-    .project-link:hover { gap: 0.6rem; }
+    .project-link:hover { gap: 0.55rem; color: #7dd3fc; }
     .project-link::after { content: '→'; }
+
+    @media (min-width: 480px) {
+      .projects-grid { gap: 1.15rem; }
+      .project-image { width: 120px; padding: 1rem; }
+      .project-image img { max-width: 92px; }
+      .project-body { padding: 1.1rem 1.2rem; gap: 0.5rem; }
+      .project-desc { -webkit-line-clamp: 3; font-size: 0.86rem; }
+      .project-title { font-size: 1.08rem; }
+    }
+
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.35rem;
+      }
+      .project-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+      }
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg), 0 0 0 1px rgba(225, 29, 72, 0.25);
+      }
+      .project-image {
+        width: 100%;
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+        padding: 1.35rem;
+      }
+      .project-image img {
+        width: auto;
+        height: 72%;
+        max-width: 140px;
+        max-height: 140px;
+      }
+      .project-body {
+        padding: 1.25rem 1.35rem 1.4rem;
+        gap: 0.55rem;
+      }
+      .project-title {
+        font-size: 1.12rem;
+        -webkit-line-clamp: 2;
+        min-height: 2.6em;
+      }
+      .project-desc {
+        font-size: 0.88rem;
+        -webkit-line-clamp: 3;
+        min-height: 4.2em;
+        flex: 1;
+      }
+      .project-tags { margin-top: 0.15rem; }
+      .project-link { font-size: 0.88rem; margin-top: 0.35rem; min-height: 0; padding: 0; }
+    }
+
+    @media (min-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .project-image { aspect-ratio: 1.15 / 1; padding: 1.5rem; }
+      .project-image img { max-width: 150px; max-height: 150px; }
+      .project-body { padding: 1.35rem 1.5rem 1.5rem; }
+      .project-title { font-size: 1.15rem; }
+      .project-desc { font-size: 0.9rem; }
+    }
+
+    @media (min-width: 1440px) {
+      .projects-grid { gap: 1.75rem; }
+    }
+
+    @media (max-width: 359px) {
+      .project-image { width: 76px; padding: 0.65rem; }
+      .project-image img { max-width: 64px; border-radius: 18%; }
+      .project-body { padding: 0.8rem 0.75rem 0.85rem; }
+      .project-desc { -webkit-line-clamp: 2; font-size: 0.78rem; }
+      .project-tag { font-size: 0.62rem; padding: 0.18rem 0.45rem; }
+    }
 
     /* ========== CONTACT ========== */
     .contact-grid {
@@ -546,7 +713,7 @@
       width: 48px; height: 48px;
       display: flex; align-items: center; justify-content: center;
       border-radius: var(--radius-md);
-      background: rgba(99, 102, 241, 0.2);
+      background: rgba(225, 29, 72, 0.2);
       font-size: 1.25rem;
     }
     .contact-card h3 { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
@@ -636,8 +803,8 @@
     .form-group textarea { min-height: 140px; resize: vertical; }
     .form-success {
       display: none; padding: 1rem;
-      background: rgba(6, 182, 212, 0.15);
-      border: 1px solid rgba(6, 182, 212, 0.3);
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
       border-radius: var(--radius-md);
       color: var(--accent-3);
       margin-top: 1rem; text-align: center;
@@ -665,15 +832,9 @@
       .hero-cta { flex-wrap: nowrap; }
     }
     @media (min-width: 1024px) {
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
       .skill-cards { grid-template-columns: repeat(2, 1fr); }
     }
     @media (min-width: 1440px) {
-      .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
       :root { --container-max: 1320px; }
     }
     @media (min-width: 2560px) {
@@ -706,7 +867,7 @@
 
   <header class="navbar" id="navbar" role="banner">
     <nav class="nav-inner" aria-label="Main navigation">
-      <a href="#hero" class="nav-logo" aria-label="Home">AA</a>
+      <a href="#hero" class="nav-logo" aria-label="Home">A</a>
       <ul class="nav-links" role="list">
         <li><a href="#about" class="nav-link" data-section="about">About</a></li>
         <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
@@ -755,7 +916,7 @@
             </div>
           </div>
           <div class="hero-image-wrap reveal">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='50%25' stop-color='%238b5cf6'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='%2312121a' width='400' height='400'/%3E%3Ccircle cx='200' cy='160' r='70' fill='url(%23g)' opacity='0.8'/%3E%3Cellipse cx='200' cy='340' rx='120' ry='80' fill='url(%23g)' opacity='0.5'/%3E%3C/svg%3E" alt="Abdul Ahad professional portrait" class="hero-image" width="320" height="320" loading="eager">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23e11d48'/%3E%3Cstop offset='50%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%2338bdf8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='%230e0e14' width='400' height='400'/%3E%3Ccircle cx='200' cy='160' r='70' fill='url(%23g)' opacity='0.8'/%3E%3Cellipse cx='200' cy='340' rx='120' ry='80' fill='url(%23g)' opacity='0.5'/%3E%3C/svg%3E" alt="Abdul Ahad professional portrait" class="hero-image" width="320" height="320" loading="eager">
           </div>
         </div>
       </div>
@@ -779,7 +940,7 @@
               <span class="skill-pill" role="listitem">Mobile</span>
               <span class="skill-pill" role="listitem">Hyper Casual</span>
               <span class="skill-pill" role="listitem">Editor Tools</span>
-              <span class="skill-pill" role="listitem">Android / iOS</span>
+              <span class="skill-pill" role="listitem">Android</span>
               <span class="skill-pill" role="listitem">Git</span>
               <span class="skill-pill" role="listitem">Firebase</span>
               <span class="skill-pill" role="listitem">Game Analytics</span>
@@ -933,6 +1094,39 @@
               <a href="https://play.google.com/store/apps/details?id=com.GameDiceStudio.OffroadCargoPickup" class="project-link leave-prompt" data-leave-label="Google Play — Monster Truck" target="_blank" rel="noopener noreferrer">View Project</a>
             </div>
           </article>
+          <article class="project-card glass reveal">
+            <div class="project-image">
+              <img src="https://play-lh.googleusercontent.com/gEZqPS4SZ4WwlmHuov9-ubtT2i_EIj7lfnjQaBQ0C0EPznker4JSCllXqbIFMVaXz1iZ1UktyfX6hzmsnj3T2Q=w512-h512" alt="ArrowDom Puzzle app icon" width="512" height="512" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">ArrowDom Puzzle</h3>
+              <p class="project-desc">2D hyper-casual arrow puzzle — clear paths, escape the dome, and solve increasingly tricky levels with simple one-touch controls.</p>
+              <div class="project-tags"><span class="project-tag">Unity</span><span class="project-tag">2D</span><span class="project-tag">Android</span><span class="project-tag">Hyper Casual</span></div>
+              <a href="https://play.google.com/store/apps/details?id=com.gd.arrowdome.go.arrowout.escape" class="project-link leave-prompt" data-leave-label="Google Play — ArrowDom Puzzle" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+          </article>
+          <article class="project-card glass reveal">
+            <div class="project-image">
+              <img src="https://play-lh.googleusercontent.com/8CLSMWmhn1vrFkUdtGbYdaqbGYN2XsGAAUtZDmfNQA6FicNcEph431Lt9cV-HufooHObvmt960AskK3hYoUnI-w=w512-h512" alt="Off Road 4x4 Driving Simulator app icon" width="512" height="512" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Off Road 4x4 Driving Simulator</h3>
+              <p class="project-desc">3D off-road pickup truck simulator with rugged terrain, realistic driving physics, and challenging outdoor tracks by Game Dice.</p>
+              <div class="project-tags"><span class="project-tag">Unity</span><span class="project-tag">3D</span><span class="project-tag">Android</span><span class="project-tag">Simulator</span></div>
+              <a href="https://play.google.com/store/apps/details?id=com.GameDice.OffRoadRussianPickupTruck3D" class="project-link leave-prompt" data-leave-label="Google Play — Off Road 4x4" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+          </article>
+          <article class="project-card glass reveal">
+            <div class="project-image">
+              <img src="https://play-lh.googleusercontent.com/dblr9K2uGuIxMQGfIqK2ecCJ31TeiKPRImn4ptYjWaSJaSskR9evJEWfCbTBDI6eVBneUbsHX5DP3hny_iSEmw=w512-h512" alt="Coach Bus Driving Simulator app icon" width="512" height="512" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Coach Simulator</h3>
+              <p class="project-desc">3D coach bus driving simulator — navigate roads, master bus controls, and enjoy realistic vehicle handling on Android.</p>
+              <div class="project-tags"><span class="project-tag">Unity</span><span class="project-tag">3D</span><span class="project-tag">Android</span><span class="project-tag">Simulator</span></div>
+              <a href="https://play.google.com/store/apps/details?id=com.gamedice.coach.bus.driving.simulator" class="project-link leave-prompt" data-leave-label="Google Play — Coach Simulator" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1056,7 +1250,7 @@
         particles.forEach((p, i) => {
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(99, 102, 241, ${p.opacity})`;
+          ctx.fillStyle = `rgba(${i % 2 === 0 ? '225, 29, 72' : '59, 130, 246'}, ${p.opacity})`;
           ctx.fill();
           if (!prefersReduced) {
             p.x += p.dx;
@@ -1069,7 +1263,7 @@
             const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
             if (dist < 120) {
               ctx.beginPath();
-              ctx.strokeStyle = `rgba(99, 102, 241, ${0.15 * (1 - dist / 120)})`;
+              ctx.strokeStyle = `rgba(59, 130, 246, ${0.18 * (1 - dist / 120)})`;
               ctx.lineWidth = 0.5;
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(p2.x, p2.y);
